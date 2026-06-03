@@ -21,8 +21,10 @@ const dbConfig = {
   database: process.env.DB_NAME || 'simdb',
   user: process.env.DB_USER || 'dbadmin',
   password: process.env.DB_PASSWORD || process.env.DB_PASS || 'Rabbittize1234!',
-  // Add a connection timeout
   connectionTimeoutMillis: 5000,
+  ssl: {
+    rejectUnauthorized: false
+  }
 };
 
 console.log("Database configuration host:", dbConfig.host);
